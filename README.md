@@ -3,7 +3,7 @@
 ```
 <div align="center">
 
-# GoTrendly
+# TechTrendly
 ### *Real-time trends for jobs, languages, domains & technologies*
 
 [![Made with FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
@@ -108,7 +108,7 @@ TechPulse aggregates data from **job boards, GitHub, Stack Overflow surveys, and
 ## 📁 Project Structure
 
 ```
-techpulse/
+TechTrendly/
 ├── backend/
 │   ├── app/
 │   │   ├── api/            # FastAPI route handlers
@@ -313,35 +313,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
----
-
-## 🌱 Future Roadmap
-
-- [ ] **v2 — Personalization** — skill gap analysis: "you know X, learn Y next"
-- [ ] **v2 — Email digest** — weekly trends newsletter
-- [ ] **v2 — Salary data** — scrape & normalize compensation by role + location
-- [ ] **v3 — AI Insights** — LLM-generated weekly trend summaries
-- [ ] **v3 — Embeds** — shareable trend widgets for blogs/portfolios
-- [ ] **v3 — API access** — public API for developers
-
----
-
-## 🤝 Contributing
-
-PRs welcome! Please open an issue first to discuss major changes.
-
-1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/add-rust-scraper`)
-3. Commit your changes (`git commit -m 'feat: add Rust ecosystem scraper'`)
-4. Push and open a Pull Request
-
----
-
-## 📄 License
-
-MIT © 2025 TechPulse
-
----
 
 <div align="center">
   <sub>Built with ❤️ to help developers stay ahead of the curve</sub>
