@@ -1,10 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-<<<<<<< HEAD
-import Link from "next/link";
-=======
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from "recharts";
->>>>>>> dd77e57 (feat: recharts bar chart with live GitHub data)
 
 interface Trend {
   id: string;
@@ -13,11 +9,8 @@ interface Trend {
   count: number;
   source: string;
 }
-<<<<<<< HEAD
-=======
 
 const COLORS = ["#3b82f6", "#6366f1", "#8b5cf6", "#a855f7", "#ec4899", "#f43f5e", "#f97316", "#eab308", "#22c55e"];
->>>>>>> dd77e57 (feat: recharts bar chart with live GitHub data)
 
 export default function Home() {
   const [trends, setTrends] = useState<Trend[]>([]);
@@ -25,42 +18,21 @@ export default function Home() {
   useEffect(() => {
     fetch("http://localhost:8000/api/trends")
       .then((res) => res.json())
-<<<<<<< HEAD
-      .then((data) => setTrends(data));
-  }, []);
-
-  const sorted = [...trends].sort((a, b) => b.count - a.count);
-
-=======
       .then((data) => setTrends([...data].sort((a, b) => b.count - a.count)));
   }, []);
 
->>>>>>> dd77e57 (feat: recharts bar chart with live GitHub data)
   return (
     <main className="min-h-screen bg-gray-950 text-white">
-
-      {/* Header */}
       <header className="border-b border-gray-800 px-8 py-4 flex items-center justify-between">
         <h1 className="text-xl font-bold">⚡ TechTrendly</h1>
         <nav className="flex gap-6 text-sm text-gray-400">
-<<<<<<< HEAD
-          <Link href="/" className="hover:text-white">Languages</Link>
-          <Link href="/" className="hover:text-white">Jobs</Link>
-          <Link href="/" className="hover:text-white">Domains</Link>
-=======
           <a href="/" className="hover:text-white">Languages</a>
           <a href="/" className="hover:text-white">Jobs</a>
           <a href="/" className="hover:text-white">Domains</a>
->>>>>>> dd77e57 (feat: recharts bar chart with live GitHub data)
         </nav>
       </header>
 
-      {/* Hero */}
-<<<<<<< HEAD
-      <section className="text-center py-20 px-4">
-=======
       <section className="text-center py-16 px-4">
->>>>>>> dd77e57 (feat: recharts bar chart with live GitHub data)
         <h2 className="text-5xl font-bold mb-4">
           Track What's <span className="text-blue-500">Trending</span> in Tech
         </h2>
@@ -69,36 +41,6 @@ export default function Home() {
         </p>
       </section>
 
-<<<<<<< HEAD
-      {/* Live Rankings */}
-      <section className="max-w-3xl mx-auto px-8 pb-20">
-        <h3 className="text-2xl font-semibold mb-6">🔥 Live Language Rankings</h3>
-        <div className="flex flex-col gap-3">
-          {sorted.map((trend, index) => (
-            <div key={trend.id} className="bg-gray-900 border border-gray-800 rounded-xl px-6 py-4 flex items-center justify-between hover:border-blue-500 transition">
-              <div className="flex items-center gap-4">
-                <span className="text-gray-500 w-6">#{index + 1}</span>
-                <span className="font-semibold capitalize">{trend.tag}</span>
-              </div>
-              <div className="flex items-center gap-4">
-                {/* Progress bar */}
-                <div className="w-40 bg-gray-800 rounded-full h-2">
-                  <div
-                    className="bg-blue-500 h-2 rounded-full"
-                    style={{ width: `${(trend.count / sorted[0]?.count) * 100}%` }}
-                  />
-                </div>
-                <span className="text-gray-400 text-sm w-20 text-right">
-                  {trend.count.toLocaleString()} repos
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-=======
-      {/* Bar Chart */}
       <section className="max-w-4xl mx-auto px-8 pb-12">
         <h3 className="text-2xl font-semibold mb-6">📊 Language Popularity</h3>
         <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6">
@@ -122,7 +64,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Rankings */}
       <section className="max-w-4xl mx-auto px-8 pb-20">
         <h3 className="text-2xl font-semibold mb-6">🔥 Live Rankings</h3>
         <div className="flex flex-col gap-3">
@@ -149,8 +90,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
->>>>>>> dd77e57 (feat: recharts bar chart with live GitHub data)
     </main>
   );
 }
